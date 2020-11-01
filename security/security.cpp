@@ -7,10 +7,11 @@
 #include <iostream>
 #include <string>
 #include <time.h>
+#include "windows.h"
 
 std::string RandomString(int len) //Random String for some generators etc..
 {
-    std::string str = { "0123456789ABCDEFAHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" }, newstr{}; int pos{ 0 };
+    std::string str = { "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" }, newstr{}; int pos{ 0 };
     while (newstr.size() != len) {
         pos = ((rand() % (str.size() - 1)));
         newstr += str.substr(pos, 1);
@@ -34,7 +35,7 @@ int main()
 
     if (frst_value < sec_value)
     {
-        int selection{ 0 };
+        system("cls"); int selection{ 0 };
         std::cout << "   Securtiy LEARN \n   Created by: KaeexS#9426\n\n\n";
         std::cout << "   1. Random Number\n";
         std::cout << "   2. Random String\n";
@@ -45,15 +46,15 @@ int main()
         {
         case 1:
             std::cout << "[*] " << RandNum << std::endl << std::endl;
-            system("pause"); break;
+            Sleep(1200); main(); break;
         case 2:
             std::cout << "[*] " << RandomString(20) << std::endl << std::endl;
-            system("pause"); break;
+            Sleep(1200); main(); break;
         case 3:
             std::cout << "[*] " << crypt << std::endl << std::endl;
-            system("pause"); break;
+            Sleep(1200); main(); break;
         default:
-            std::cout << "command not found\n"; system("pause"); break;
+            std::cout << "command not found\n"; Sleep(1200); main(); break;
         }
     }
 }
