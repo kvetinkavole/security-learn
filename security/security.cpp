@@ -10,7 +10,7 @@
 
 std::string RandomString(int len) //Random String for some generators etc..
 {
-    std::string str = { "0123456789ABCDEFAHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" }, newstr{}; int pos;
+    std::string str = { "0123456789ABCDEFAHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" }, newstr{}; int pos{ 0 };
     while (newstr.size() != len) {
         pos = ((rand() % (str.size() - 1)));
         newstr += str.substr(pos, 1);
